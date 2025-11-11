@@ -215,6 +215,10 @@ h2 {
 
                     li {
                         font-size: var(--main-font-size);
+                        strong{
+                            display: inline-block;
+                            width: 70px;
+                        }
                     }
                 }
 
@@ -277,6 +281,10 @@ h2 {
 
                     span {
                         margin-bottom: 13px;
+                        font-size: 15px;
+                        strong {
+                            font-size: 17px;
+                        }
                     }
                 }
 
@@ -394,7 +402,7 @@ h2 {
     .item-comment {
         margin: 10px 0 30px;
         font-weight: 500;
-        line-height: 1.2;
+        line-height: 1.5;
     }
 
     .text-box {
