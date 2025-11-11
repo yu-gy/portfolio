@@ -61,7 +61,7 @@
 
 
             //about me
-            const words = ["소통하는", "열정적인", "창의적인"];
+            const words = ["소통하는", "열정적인"];
             const span = document.querySelector('.changing-word');
             let index = 0;
             span.addEventListener('animationend', nextWord);
@@ -79,30 +79,47 @@
             const about = document.querySelector(".about");
             const project = document.querySelector(".project");
             const menu = document.querySelector(".menu");
+            const $logo = $('.logo');
             const $menuAbout = $('.about_menu');
             const $menuProject = $('.project_menu');
             const $menuDesign = $('.design_menu');
             const $design = $('.design');
+            const $menuContact = $('.contact_menu');
+            const $contact = $('.contact');
 
 
-            $menuAbout.on('click', function(){
+            $logo.on('click', function () {
+                $('html, body').stop().animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+
+            $menuAbout.on('click', function () {
                 let mainHeight = $('#main').innerHeight();
                 $('html, body').animate({
-                    scrollTop : mainHeight
+                    scrollTop: mainHeight
                 }, 1000);
             });
-            $menuProject.on('click', function(){
+            $menuProject.on('click', function () {
                 let projectHeight = $('.project').offset().top;
                 $('html, body').stop().animate({
-                    scrollTop : projectHeight
+                    scrollTop: projectHeight
                 }, 1000);
             });
-            $menuDesign.on('click', function(){
+            $menuDesign.on('click', function () {
                 let designHeight = $('.design').offset().top;
                 $('html, body').stop().animate({
-                    scrollTop : designHeight
+                    scrollTop: designHeight
                 }, 1000);
             });
+            $menuContact.on('click', function () {
+                let contactHeight = $('.contact').offset().top;
+                $('html, body').stop().animate({
+                    scrollTop: contactHeight
+                }, 1000);
+            });
+
+
 
 
 
@@ -137,7 +154,7 @@
 
             const $zzBtn = $('#zigzag-btn');
 
-            $zzBtn.on('click', function(){
+            $zzBtn.on('click', function () {
 
             });
 
@@ -150,7 +167,7 @@
             });
 
             Fancybox.bind("[data-fancybox='gallery']", {
-                click: true,
+                click: "close",
                 closeButton: "top",
             });
 
@@ -163,14 +180,14 @@
 <body>
 
     <div class="menu">
-        <h1 class="logo"><a href="#"><img src="img/yg.svg" alt="로고이미지"></a></h1>
+        <h1 class="logo"><img src="img/yg.svg" alt="로고이미지"></h1>
         <ul class="menu1">
             <li class="about_menu">About</li>
             <li class="project_menu">Project</li>
         </ul>
         <ul class="menu2">
             <li class="design_menu">Design</li>
-            <li>Contact</li>
+            <li class="contact_menu">Contact</li>
         </ul>
     </div><!-- menu end -->
 
@@ -200,7 +217,7 @@
 
                 <div class="about-right">
                     <div class="comment">
-                        <p class="scrolling-text"><span class="changing-word">소통하는</span>&nbsp;디자이너 정유경입니다.</p>
+                        <p class="scrolling-text"><span class="changing-word">소통하는</span>&nbsp; 웹 디자이너 정유경입니다.</p>
                     </div><!--comment end  -->
                     <div class="Education">
                         <p>Education</p>
@@ -254,10 +271,12 @@
                         <img src="img/vunque-qr.png" alt="vunque-qr">
                     </div><!-- text-box -->
                     <div class="buttons">
-                        <a target='_blank' href="https://yu-gy.github.io/vunque/" class="jelly">
+                        <a target='_blank' href="https://yu-gy.github.io/vunque/" class="jelly" id="webBtn">
                             Web
                         </a>
-                        <a target='_blank' href="https://www.figma.com/design/pJrDccXA6o2sxKEXAvAKrS/vunque_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85?t=gsdlTNbOUjonT8vQ-0" class="jelly">
+                        <a target='_blank'
+                            href="https://www.figma.com/design/pJrDccXA6o2sxKEXAvAKrS/vunque_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85?t=gsdlTNbOUjonT8vQ-0"
+                            class="jelly">
                             Figma
                         </a>
                     </div><!--buttons  -->
@@ -285,8 +304,10 @@
                         <img src="img/dunkin-qr.png" alt="dunkin-qr">
                     </div><!-- text-box -->
                     <div class="buttons">
-                        <a target='_blank' href="https://yu-gy.github.io/dunkin/" class="jelly">Web</a>
-                        <a target='_blank' href="https://www.figma.com/design/yQiM59bdFAZPkHBcIQOG53/%EB%8D%98%ED%82%A8--%EB%94%94%EC%9E%90%EC%9D%B8-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-?t=gsdlTNbOUjonT8vQ-0" class="jelly">
+                        <a target='_blank' href="https://yu-gy.github.io/dunkin/" class="jelly" id="webBtn">Web</a>
+                        <a target='_blank'
+                            href="https://www.figma.com/design/yQiM59bdFAZPkHBcIQOG53/%EB%8D%98%ED%82%A8--%EB%94%94%EC%9E%90%EC%9D%B8-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-?t=gsdlTNbOUjonT8vQ-0"
+                            class="jelly">
                             <p>Figma</p>
                         </a>
                         <a target='_blank' href="/pdf/dunkin.pdf" class="jelly">
@@ -316,8 +337,10 @@
                         <img src="img/fwee-qr.png" alt="fwee-qr">
                     </div><!-- text-box -->
                     <div class="buttons">
-                        <a target='_blank' href="https://yu-gy.github.io/fwee/" class="jelly">Web</a>
-                        <a target='_blank' href="https://www.figma.com/design/9cKrh5g3P21DjQsMlPzFCh/fwee_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85?t=gsdlTNbOUjonT8vQ-0" class="jelly">
+                        <a target='_blank' href="https://yu-gy.github.io/fwee/" class="jelly" id="webBtn">Web</a>
+                        <a target='_blank'
+                            href="https://www.figma.com/design/9cKrh5g3P21DjQsMlPzFCh/fwee_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85?t=gsdlTNbOUjonT8vQ-0"
+                            class="jelly">
                             Figma
                         </a>
                         <a target='_blank' href="/pdf/fwee.pdf" class="jelly">
@@ -345,11 +368,14 @@
                         <img src="img/limite-qr.png" alt="limite-qr">
                     </div><!-- text-box -->
                     <div class="buttons">
-                        <a target='_blank' href="#" class="jelly">Web</a>
-                        <a target='_blank' href="https://www.figma.com/design/L9GMcHNuOZI1hDhuX9gHwx/%EB%A6%AC%EB%AF%B8%EB%96%BC%EB%91%90%EB%91%90--%EB%94%94%EC%9E%90%EC%9D%B8-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-?node-id=0-1&p=f&t=gsdlTNbOUjonT8vQ-0" class="jelly">
+                        <a target='_blank' href="https://yu-gy.github.io/Limitedoudou/" class="jelly"
+                            id="webBtn">Web</a>
+                        <a target='_blank'
+                            href="https://www.figma.com/design/L9GMcHNuOZI1hDhuX9gHwx/%EB%A6%AC%EB%AF%B8%EB%96%BC%EB%91%90%EB%91%90--%EB%94%94%EC%9E%90%EC%9D%B8-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-?node-id=0-1&p=f&t=gsdlTNbOUjonT8vQ-0"
+                            class="jelly">
                             Figma
                         </a>
-                        <a target='_blank' href="#" class="jelly">
+                        <a target='_blank' href="/pdf/lmitedoudou.pdf" class="jelly">
                             Process
                         </a>
                     </div><!--buttons  -->
@@ -373,10 +399,10 @@
 
                     </div><!-- text-box -->
                     <div class="buttons" id="zigzag-btn">
-                        <a href="#" class="jelly">
+                        <a data-fancybox="gallery" href="img/zigzag-design.png" class="jelly" id="webBtn">
                             photoshop
                         </a>
-                        <a target='_blank' href="#" class="jelly">
+                        <a target='_blank' href="/pdf/zigzag.pdf" class="jelly">
                             Process
                         </a>
                     </div><!--buttons  -->
@@ -387,35 +413,65 @@
             </div><!-- item end -->
     </div><!-- section1 project end -->
     </div><!-- scroll_wrapper -->
-   <!--  <div class="line-image">
+  <!--    <div class="line-image">
         <img src="img/line.png" alt="line-image">
-    </div><!--line-image end  --> -->
+    </div><line-image end  -->
     <section class="design" id="design">
-        <h3>design</h3>
+        <h3>Design</h3>
         <p class="design-commet">Adobe Photoshop&Illustrator로 디자인한 작업물입니다.</p>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a data-fancybox="gallery" href="img/design1.jpg"><img src="img/design1.jpg"
-                            alt="오드카페메뉴"></a></div>
-                <div class="swiper-slide"><a data-fancybox="gallery" href="img/design6.jpg"><img src="img/design6.jpg"
-                            alt="탑텐상세페이지"></a></div>
-                <div class="swiper-slide"><a data-fancybox="gallery" href="img/design5.jpg"><img src="img/design5.jpg"
-                            alt="스프링이벤트"></a></div>
-                <div class="swiper-slide"><a data-fancybox="gallery" href="img/design3.jpg"><img src="img/design3.jpg"
-                            alt="멤버십이벤트"></a></div>
-                <div class="swiper-slide"><a data-fancybox="gallery" href="img/design2.jpg"><img src="img/design2.jpg"
-                            alt="애견동반펜션"></a></div>
-                <div class="swiper-slide"><a data-fancybox="gallery" href="img/design4.jpg"><img src="img/design4.jpg"
-                            alt="수딩크림"></a></div>
+                <div class="swiper-slide">
+                    <img src="img/photoshop.png" alt="photoshop icon" id="icon">
+                    <a data-fancybox="gallery" href="img/design1.jpg"><img src="img/design1.jpg" alt="오드카페메뉴"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="img/photoshop.png" alt="photoshop icon" id="icon">
+                    <a data-fancybox="gallery" href="img/design6.jpg"><img src="img/design6.jpg" alt="탑텐상세페이지"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="img/Illustrator.png" alt="Illustrator icon" id="icon">
+                    <a data-fancybox="gallery" href="img/design5.jpg"><img src="img/design5.jpg" alt="스프링이벤트"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="img/photoshop.png" alt="photoshop icon" id="icon">
+                    <a data-fancybox="gallery" href="img/design3.jpg"><img src="img/design3.jpg" alt="멤버십이벤트"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="img/photoshop.png" alt="photoshop icon" id="icon">
+                    <a data-fancybox="gallery" href="img/design2.jpg"><img src="img/design2.jpg" alt="애견동반펜션"></a>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="img/photoshop.png" alt="photoshop icon" id="icon">
+                    <a data-fancybox="gallery" href="img/design4.jpg"><img src="img/design4.jpg" alt="수딩크림"></a>
+                </div>
             </div><!-- swiper-wrapper end-->
         </div><!-- swiper mySwiper end -->
     </section><!--  design end-->
 
-    <div class="contact">
-       <div class="text">
-            <img src="img/kakao.jpg" alt="kakao-qr">
-       </div><!-- text end -->
+    <div class="contact" id="contact">
+        <h3>Contact</h3>
+        <div class="inner">
+            <h4>Thank you for Watching!</h4>
+            <div class="text">
+                <img src="img/kakao.jpg" alt="kakao-qr">
+                <div class="text-box">
+                    <p class="pdf-Btn"><a href="#">OPEN PDF</a></p>
+                    <p><strong>Phone.</strong>&nbsp;010-9699-5650</p>
+                    <p><strong>Email.</strong>&nbsp;&nbsp;u__gyeong@naver.com</p>
+                </div><!--text-box end  -->
+            </div><!-- text end -->
+        </div><!-- inner end -->
     </div><!-- Contact end  -->
+    <div class="footer">
+          <span>※본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다. 일부 내용 및 폰트, 이미지 등은 그 출처가 따로 있음을 밝힙니다. <br />
+                COPYRIGHT © 2025. Jeong yugyeong All Right Reserved.</span>
+    </div><!-- footer end -->
 </body>
 
 </html>

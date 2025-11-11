@@ -18,6 +18,12 @@ body {
   background-color: var(--background-color);
   overflow-x: hidden;
 }
+body::-moz-selection {
+  background-color: var(--pink-color);
+}
+body::selection {
+  background-color: var(--pink-color);
+}
 
 a {
   cursor: inherit;
@@ -148,7 +154,7 @@ h2 {
 .section-wrapper .about {
   background: url("../img/background_blue.png") no-repeat center top;
   background-size: auto;
-  height: 150vh;
+  height: 160vh;
   border-radius: 0 0 50% 50%;
   z-index: 2;
   position: absolute;
@@ -159,7 +165,7 @@ h2 {
 .section-wrapper .about h3 {
   font-size: var(--title-font-size);
   text-align: center;
-  padding: 75px 0;
+  padding: 60px 0 70px 0;
   font-weight: 600;
 }
 .section-wrapper .about .name-item {
@@ -245,7 +251,7 @@ h2 {
   margin-bottom: 20px;
 }
 .section-wrapper .about .name-item .about-right .Education span {
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 .section-wrapper .about .name-item .about-right .Skill p {
   font-size: var(--middle-font-size);
@@ -332,7 +338,7 @@ h2 {
   margin-bottom: 40px;
 }
 .project-item img {
-  width: 200px;
+  width: 180px;
 }
 .project-item .fweelogo {
   width: 150px;
@@ -364,12 +370,18 @@ h2 {
 }
 .project-item .buttons a {
   padding: 15px 40px;
-  background-color: var(--btn-color);
   font-size: 25px;
-  color: #fdfdfd;
   font-weight: 600;
   border-radius: 30px;
   display: inline-block;
+  background-color: #fdfdfd;
+  color: var(--btn-color);
+  border: 4px solid var(--btn-color);
+  transition: all 0.2s;
+}
+.project-item .buttons a:hover {
+  background-color: var(--btn-color);
+  color: #fdfdfd;
 }
 .project-item .buttons a.jelly:hover {
   animation: jelly 0.5s;
@@ -393,12 +405,17 @@ h2 {
   }
 }
 
+#webBtn {
+  background-color: var(--btn-color);
+  color: #fdfdfd;
+}
+
 .project-right img {
   width: 600px;
 }
 
 .project-item:last-child .project-left img {
-  width: 120px;
+  width: 100px;
 }
 .project-item:last-child .project-right img {
   width: 420px;
@@ -427,6 +444,7 @@ h2 {
 .design .swiper-wrapper .swiper-slide {
   width: 500px;
   height: 500px;
+  position: relative;
 }
 .design .swiper-wrapper .swiper-slide img {
   width: 100%;
@@ -436,6 +454,13 @@ h2 {
   -o-object-position: top;
      object-position: top;
 }
+.design .swiper-wrapper .swiper-slide #icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 .fancybox__container,
 .fancybox__container *,
@@ -444,12 +469,84 @@ h2 {
   cursor: url("../img/cursor.png"), auto !important;
 }
 
-.contact {
+.swiper-slide a:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.contact h3 {
+  text-align: center;
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  padding: 65px 0;
+}
+.contact .inner {
   background: url("../img/contact.png") no-repeat center top;
   background-size: auto;
   width: 100%;
-  height: 600px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.contact .text img {
-  width: 100px;
+.contact .inner h4 {
+  font-size: var(--middle-font-size);
+  font-weight: 600;
+  margin: 150px 0 60px 0;
+}
+.contact .inner .text {
+  display: flex;
+  align-items: end;
+  gap: 40px;
+}
+.contact .inner .text .pdf-Btn {
+  font-size: var(--main-font-size);
+  text-align: center;
+  width: 120px;
+  font-weight: 600;
+  background-color: var(--background-color);
+  color: var(--btn-color);
+  border-radius: 30px;
+  padding: 15px;
+}
+.contact .inner .text .pdf-Btn:hover {
+  animation: jelly 0.5s;
+}
+.contact .inner .text .pdf-Btn.fill {
+  transition: 0.3s;
+}
+.contact .inner .text .pdf-Btn.fill:hover {
+  background: transparent;
+  box-shadow: inset 0 0 0 36px var(--btn-bg);
+}
+@keyframes jelly {
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+.contact .inner .text p {
+  margin-top: 10px;
+  font-size: 25px;
+}
+.contact .inner .text img {
+  width: 120px;
+}
+
+.footer {
+  background-color: var(--skyblue-color);
+  text-align: center;
+  padding: 20px;
+}
+.footer span {
+  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.231372549);
 }/*# sourceMappingURL=main.css.map */
