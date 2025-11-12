@@ -18,9 +18,9 @@
 body {
     font-family: 'League Spartan';
     cursor: url('../img/cursor.png'), auto;
-    min-width: 1800px;
+    min-width: 1600px;
     background-color: var(--background-color);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 
     &::selection {
         background-color: var(--pink-color);
@@ -348,6 +348,7 @@ h2 {
             text-align: center;
             font-weight: 500;
             margin-bottom: 70px;
+            font-size: 18px;
         }
     }
 
@@ -499,8 +500,8 @@ h2 {
 
     .project-right {
         img {
-            width: 420px;
-            height: 500px;
+            width: 520px;
+           
         }
 
     }
@@ -508,7 +509,11 @@ h2 {
 
 
 .line-image {
+    width: 100%;
     padding: 100px 0;
+    img {
+        width: 100%;
+    }
 }
 
 .design {
@@ -524,6 +529,7 @@ h2 {
         margin-bottom: 100px;
         font-weight: 500;
         text-align: center;
+        font-size: 18px;
     }
 
     .swiper-wrapper {
@@ -570,7 +576,7 @@ h2 {
         text-align: center;
         font-size: var(--title-font-size);
         font-weight: 600;
-        padding: 65px 0;
+        padding: 70px 0;
     }
 
     .inner {

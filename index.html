@@ -15,170 +15,12 @@
     <script src="lib/jquery-ui.min.js"></script>
     <script src="lib/gsap.min.js"></script>
     <script src="lib/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
-    <!-- <script src="js/main.js"></script> -->
-    <script>
-        window.onload = () => {
-
-            //main 
-            const main = document.querySelector('#main');
-            const butterfly = document.querySelector('.butterfly');
-            const cloud = document.querySelector('.cloud');
-            const cat = document.querySelector('.cat');
-            const flower = document.querySelector('.flower');
-
-            main.addEventListener('mousemove', e => {
-                const rect = main.getBoundingClientRect();
-                const xpos = e.clientX - rect.left;
-                const ypos = e.clientY - rect.top;
-
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-
-                const butterflyMove = 20, butterflyRotate = 25;
-                const cloudMove = 30, cloudRotate = 35;
-                const catMove = 20, catRotate = 25;
-                const flowerMove = 30, flowerRotate = 35;
-
-                butterfly.style.transform = `translate(${(xpos - centerX) / butterflyMove}px, ${(ypos - centerY) / butterflyMove}px) 
-                              rotateX(${-(ypos - centerY) / butterflyRotate}deg) 
-                              rotateY(${(xpos - centerX) / butterflyRotate}deg)`;
-
-                cloud.style.transform = `translate(${(xpos - centerX) / cloudMove}px, ${(ypos - centerY) / cloudMove}px) 
-                                 rotateX(${-(ypos - centerY) / cloudRotate}deg) 
-                                 rotateY(${(xpos - centerX) / cloudRotate}deg)`;
-
-                cat.style.transform = `translate(${(xpos - centerX) / catMove}px, ${(ypos - centerY) / catMove}px) 
-                               rotateX(${-(ypos - centerY) / catRotate}deg) 
-                               rotateY(${(xpos - centerX) / catRotate}deg)`;
-
-                flower.style.transform = `translate(${(xpos - centerX) / flowerMove}px, ${(ypos - centerY) / flowerMove}px) 
-                               rotateX(${-(ypos - centerY) / flowerRotate}deg) 
-                               rotateY(${(xpos - centerX) / flowerRotate}deg)`;
-            });
-
-
-            //about me
-            const words = ["소통하는", "열정적인"];
-            const span = document.querySelector('.changing-word');
-            let index = 0;
-            span.addEventListener('animationend', nextWord);
-
-            function nextWord() {
-                index = (index + 1) % words.length;
-                span.textContent = words[index];
-
-                span.style.animation = 'none';
-                span.offsetHeight;
-                span.style.animation = 'scrollDown 3s linear';
-            }
-
-            //scroll_wrapper
-            const about = document.querySelector(".about");
-            const project = document.querySelector(".project");
-            const menu = document.querySelector(".menu");
-            const $logo = $('.logo');
-            const $menuAbout = $('.about_menu');
-            const $menuProject = $('.project_menu');
-            const $menuDesign = $('.design_menu');
-            const $design = $('.design');
-            const $menuContact = $('.contact_menu');
-            const $contact = $('.contact');
-
-
-            $logo.on('click', function () {
-                $('html, body').stop().animate({
-                    scrollTop: 0
-                }, 1000);
-            });
-
-            $menuAbout.on('click', function () {
-                let mainHeight = $('#main').innerHeight();
-                $('html, body').animate({
-                    scrollTop: mainHeight
-                }, 1000);
-            });
-            $menuProject.on('click', function () {
-                let projectHeight = $('.project').offset().top;
-                $('html, body').stop().animate({
-                    scrollTop: projectHeight
-                }, 1000);
-            });
-            $menuDesign.on('click', function () {
-                let designHeight = $('.design').offset().top;
-                $('html, body').stop().animate({
-                    scrollTop: designHeight
-                }, 1000);
-            });
-            $menuContact.on('click', function () {
-                let contactHeight = $('.contact').offset().top;
-                $('html, body').stop().animate({
-                    scrollTop: contactHeight
-                }, 1000);
-            });
-
-
-
-
-
-            window.addEventListener("scroll", () => {
-                const pinSpacer = document.querySelector(".about").clientHeight + document.querySelector('#main').clientHeight + 400;
-                const scrollY = window.scrollY;
-                const aboutBottom = about.offsetTop + about.offsetHeight;
-                console.log(project.offsetTop)
-                console.log(scrollY);
-                console.log(pinSpacer);
-
-                if (scrollY > pinSpacer) {
-                    menu.classList.add("active");
-                } else {
-                    menu.classList.remove("active");
-                }
-
-            });
-            gsap.registerPlugin(ScrollTrigger);
-
-            gsap.to(".about", {
-                yPercent: -120,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".section-wrapper",
-                    start: "top top",
-                    end: "=+2500",
-                    scrub: true,
-                    pin: true
-                }
-            });
-
-            const $zzBtn = $('#zigzag-btn');
-
-            $zzBtn.on('click', function () {
-
-            });
-
-
-
-            //design
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 3.5,
-                spaceBetween: 20,
-            });
-
-            Fancybox.bind("[data-fancybox='gallery']", {
-                click: "close",
-                closeButton: "top",
-            });
-
-
-
-        }//script end
-    </script>
 </head>
 
 <body>
-
     <div class="menu">
         <h1 class="logo"><img src="img/yg.svg" alt="로고이미지"></h1>
         <ul class="menu1">
@@ -228,20 +70,20 @@
                     <div class="Skill">
                         <p>Skill</p>
                         <div class="icon">
-                            <div class="tool" data-tooltip="Web과 App 인터페이스 디자인 및 스토리보드 제작이 가능합니다."><img
-                                    src="img/figma.png" alt="figma"></div>
                             <div class="tool" data-tooltip="Visual tudio code를 사용하여 효율적인 웹 개발을 할 수 있습니다."><img
                                     src="img/visual.png" alt="visual studio code"></div>
-                            <div class="tool" data-tooltip="JavaScript의 구조를 이해하고 있으며, 웹 페이지에 인터랙션 기능을 추가할 수 있습니다."><img
-                                    src="img/JavaScript.png" alt="JavaScript"></div>
-                            <div class="tool" data-tooltip="기본적인 jquery의 구조를 이해하고 있으며, 이를 활용한 스크립트 사용이 가능합니다."><img
-                                    src="img/jquery.png" alt="jquery"></div>
                             <div class="tool" data-tooltip="HTML의 구조를 잘 이해하고 작성할 수 있습니다."><img src="img/html.png"
                                     alt="html"></div>
                             <div class="tool" data-tooltip="CSS로 반응형 웹사이트 스타일링이 가능합니다."><img src="img/css.png"
                                     alt="css"></div>
-                            <div class="tool" data-tooltip="GitHub를 통한 버전 관리와 협업이 가능합니다."><img src="img/git.png"
-                                    alt="git"> </div>
+                            <div class="tool" data-tooltip="JavaScript의 구조를 이해하고 있으며, 웹 페이지에 인터랙션 기능을 추가할 수 있습니다."><img
+                                    src="img/JavaScript.png" alt="JavaScript"></div>
+                            <div class="tool" data-tooltip="기본적인 jquery의 구조를 이해하고 있으며, 이를 활용한 스크립트 사용이 가능합니다."><img
+                                    src="img/jquery.png" alt="jquery"></div>
+                                    <div class="tool" data-tooltip="GitHub를 통한 버전 관리와 협업이 가능합니다."><img src="img/git.png"
+                                            alt="git"> </div>
+                            <div class="tool" data-tooltip="Web과 App 인터페이스 디자인 및 스토리보드 제작이 가능합니다."><img
+                                    src="img/figma.png" alt="figma"></div>
                             <div class="tool" data-tooltip="Photoshop으로 기본적인 이미지 보정 및 디자인을 할 수 있습니다."><img
                                     src="img/photoshop.png" alt="Photoshop"></div>
                             <div class="tool" data-tooltip="Illustrator로 간단한 로고 및 아이콘 디자인을 할 수 있습니다."><img
@@ -260,7 +102,8 @@
                 <div class="project-left">
                     <h3>WEB 01</h3>
                     <img src="img/vunquelogo.png" alt="vunque-logo">
-                    <p class="item-comment">분크 웹사이트의 제품 노출 방식을 개선하여 모델 제품의 탐색성과 <br />신규 맨즈 제품의 접근성을 강화하여 메인 페이지를 리뉴얼하였습니다.</p>
+                    <p class="item-comment">분크 웹사이트의 제품 노출 방식을 개선하여 모델 제품의 탐색성과 <br />신규 맨즈 제품의 접근성을 강화하여 메인 페이지를
+                        리뉴얼하였습니다.</p>
                     <div class="text-box">
                         <div class="text">
                             <p><strong>제작범위</strong>&nbsp;&nbsp;&nbsp;PC 메인페이지</p>
@@ -292,7 +135,7 @@
                 <div class="project-left">
                     <h3>WEB 02</h3>
                     <img src="img/dunkinlogo.png" alt="dunkin logo">
-                    <p class="item-comment">던킨 브랜드 컬러의 통일하고, 풀페이지 구조로 구성하여 브랜드 <br />일관성과 시각적 편의성을 강조하였습니다. </p>
+                    <p class="item-comment">던킨 브랜드 컬러의 통일하고, 풀페이지 구조로 구성하여 브랜드 <br />일관성과 시각적 편의성을 강조하여 리뉴얼하였습니다. </p>
                     <div class="text-box">
                         <div class="text">
                             <p><strong>제작범위</strong>&nbsp;&nbsp;&nbsp;메인페이지 (반응형)</p>
@@ -411,9 +254,9 @@
             </div><!-- item end -->
     </div><!-- section1 project end -->
     </div><!-- scroll_wrapper -->
-  <!--    <div class="line-image">
+       <div class="line-image">
         <img src="img/line.png" alt="line-image">
-    </div><line-image end  -->
+    </div><line-image end 
     <section class="design" id="design">
         <h3>Design</h3>
         <p class="design-commet">Adobe Photoshop&Illustrator로 디자인한 작업물입니다.</p>
@@ -467,8 +310,8 @@
         </div><!-- inner end -->
     </div><!-- Contact end  -->
     <div class="footer">
-          <span>※본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다. 일부 내용 및 폰트, 이미지 등은 그 출처가 따로 있음을 밝힙니다. <br />
-                COPYRIGHT © 2025. Jeong yugyeong All Right Reserved.</span>
+        <span>※본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다. 일부 내용 및 폰트, 이미지 등은 그 출처가 따로 있음을 밝힙니다. <br />
+            COPYRIGHT © 2025. Jeong yugyeong All Right Reserved.</span>
     </div><!-- footer end -->
 </body>
 
