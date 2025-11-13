@@ -443,7 +443,7 @@ h2 {
   text-align: center;
   font-weight: 600;
   margin-bottom: 10px;
-  padding-top: 170px;
+  padding-top: 180px;
 }
 .design .design-commet {
   margin-bottom: 100px;
@@ -452,11 +452,11 @@ h2 {
   font-size: 18px;
 }
 .design .swiper-wrapper {
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 .design .swiper-wrapper .swiper-slide {
   width: 500px;
-  height: 500px;
+  height: 700px;
   position: relative;
 }
 .design .swiper-wrapper .swiper-slide img {
@@ -491,75 +491,73 @@ h2 {
   text-align: center;
   font-size: var(--title-font-size);
   font-weight: 600;
-  padding: 70px 0;
+  margin-bottom: 80px;
 }
 .contact .inner {
   background: url("../img/contact.png") no-repeat center top;
   background-size: auto;
   width: 100%;
-  height: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 .contact .inner h4 {
-  font-size: var(--middle-font-size);
-  font-weight: 600;
-  margin: 150px 0 60px 0;
-}
-.contact .inner .text {
-  display: flex;
-  align-items: end;
-  gap: 40px;
-}
-.contact .inner .text .pdf-Btn {
-  font-size: var(--main-font-size);
-  text-align: center;
-  width: 120px;
-  font-weight: 600;
-  background-color: var(--background-color);
-  color: var(--btn-color);
-  border-radius: 30px;
-  padding: 15px;
-}
-.contact .inner .text .pdf-Btn:hover {
-  animation: jelly 0.5s;
-}
-.contact .inner .text .pdf-Btn.fill {
-  transition: 0.3s;
-}
-.contact .inner .text .pdf-Btn.fill:hover {
-  background: transparent;
-  box-shadow: inset 0 0 0 36px var(--btn-bg);
-}
-@keyframes jelly {
-  25% {
-    transform: scale(0.9, 1.1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  75% {
-    transform: scale(0.95, 1.05);
-  }
-}
-.contact .inner .text p {
-  margin-top: 10px;
   font-size: 25px;
+  font-weight: 600;
+  margin: 120px 0 40px;
 }
-.contact .inner .text img {
-  width: 120px;
+.contact .inner .image-box {
+  transition: transform 1s;
+  transform: perspective(800px) rotateY(180deg);
+  transform-style: preserve-3d;
+  display: grid;
+}
+.contact .inner .image-box > * {
+  grid-area: 1/1/1/1;
+}
+.contact .inner .image-box:hover {
+  transform: perspective(800px) rotateY(0deg);
+}
+.contact .inner .image-box img {
+  width: 500px;
+}
+.contact .inner .image-box .front {
+  width: 100%;
+  display: block;
+}
+.contact .inner .image-box .back {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .footer {
   background-color: var(--skyblue-color);
   text-align: center;
-  padding: 20px;
+  padding: 30px 0;
+  position: relative;
 }
 .footer span {
   line-height: 1.5;
   font-size: 13px;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.231372549);
+}
+.footer .footer-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
+.footer .footer-btn li {
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  color: #fdfdfd;
+  background-color: var(--pink-color);
+  font-size: var(--main-font-size);
 }/*# sourceMappingURL=main.css.map */

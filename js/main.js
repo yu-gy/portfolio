@@ -101,9 +101,9 @@ window.onload = () => {
         const pinSpacer = document.querySelector(".about").clientHeight + document.querySelector('#main').clientHeight + 400;
         const scrollY = window.scrollY;
         const aboutBottom = about.offsetTop + about.offsetHeight;
-        console.log(project.offsetTop)
+        /* console.log(project.offsetTop)
         console.log(scrollY);
-        console.log(pinSpacer);
+        console.log(pinSpacer); */
 
         if (scrollY > pinSpacer) {
             menu.classList.add("active");
