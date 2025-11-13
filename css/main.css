@@ -560,4 +560,29 @@ h2 {
   color: #fdfdfd;
   background-color: var(--pink-color);
   font-size: var(--main-font-size);
+}
+.footer .footer-btn li:hover {
+  background-color: var(--btn-color);
+  color: #fdfdfd;
+}
+.footer .footer-btn li.jelly:hover {
+  animation: jelly 0.5s;
+}
+.footer .footer-btn li.fill {
+  transition: 0.3s;
+}
+.footer .footer-btn li.fill:hover {
+  background: transparent;
+  box-shadow: inset 0 0 0 36px var(--btn-bg);
+}
+@keyframes jelly {
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
 }/*# sourceMappingURL=main.css.map */
