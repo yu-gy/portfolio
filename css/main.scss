@@ -22,6 +22,7 @@ body {
     background-color: var(--background-color);
     /* overflow-x: hidden; */
     color: #0c0c0c;
+
     &::selection {
         background-color: var(--pink-color);
     }
@@ -597,8 +598,8 @@ h2 {
             font-size: 40px;
             font-weight: 600;
             margin: 120px 0 40px;
-
         }
+
         .inner-text {
             margin-bottom: 10px;
             font-weight: 500;
@@ -607,24 +608,30 @@ h2 {
             color: var(--btn-color);
             background-color: #fdfdfd;
         }
+
         .image-box {
             width: 500px;
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
             transform: perspective(800px) rotateY(0deg);
             transform-style: preserve-3d;
             display: grid;
-            > * {
+
+            >* {
                 grid-area: 1 / 1 / 1 / 1;
             }
+
             .card {
                 display: block;
+
                 img {
                     width: 100%;
                 }
             }
+
             &:hover {
                 transform: perspective(800px) rotateY(180deg);
             }
+
             .card_back {
                 position: relative;
                 transform: rotateY(180deg);
@@ -638,12 +645,13 @@ h2 {
                     position: absolute;
                     top: 30px;
                     left: 30px;
-                    color:var(--brown-color);
-                   
+                    color: var(--brown-color);
+
 
                     span {
                         font-size: 30px;
                         font-weight: 800;
+
                         .my-name {
                             font-size: 15px;
                         }
@@ -653,12 +661,14 @@ h2 {
                         padding: 6px 0;
                         display: flex;
                         gap: 20px;
+
                         a:hover {
                             text-decoration: underline;
                         }
                     }
 
                 }
+
                 .kakao-pr {
                     position: absolute;
                     bottom: 30px;
