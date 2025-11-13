@@ -16,7 +16,6 @@ body {
   cursor: url("../img/cursor.png"), auto;
   min-width: 1600px;
   background-color: var(--background-color);
-  /* overflow-x: hidden; */
   color: #0c0c0c;
 }
 body::-moz-selection {
@@ -32,6 +31,8 @@ a {
 
 .menu {
   background-image: url("../img/menu-background.png");
+  -o-object-fit: cover;
+     object-fit: cover;
   background-color: transparent;
   width: 100%;
   height: 126px;
@@ -119,6 +120,10 @@ h2 {
   text-align: center;
   font-weight: 600;
   line-height: 1.2;
+  margin-top: 60px;
+}
+h2 strong {
+  font-size: 240px;
 }
 
 .butterfly,
@@ -136,17 +141,17 @@ h2 {
 
 .cloud {
   top: 100px;
-  left: 1150px;
+  left: 1100px;
 }
 
 .cat {
   top: 500px;
-  left: 1500px;
+  left: 1450px;
 }
 
 .flower {
-  top: 550px;
-  left: 250px;
+  top: 540px;
+  left: 235px;
 }
 
 .section-wrapper {
@@ -207,8 +212,7 @@ h2 {
   width: 70px;
 }
 .section-wrapper .about .name-item .about-left img {
-  width: 300px;
-  height: 400px;
+  width: 250px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -514,8 +518,10 @@ h2 {
   font-weight: 500;
   font-size: 14px;
   padding: 5px;
+  background-color: var(--background-color);
   color: var(--btn-color);
-  background-color: #fdfdfd;
+  letter-spacing: 3px;
+  transition: all 0.3s;
 }
 .contact .inner .image-box {
   width: 500px;
@@ -535,6 +541,10 @@ h2 {
 }
 .contact .inner .image-box:hover {
   transform: perspective(800px) rotateY(180deg);
+}
+.contact .inner .image-box:hover .inner-text {
+  animation: none;
+  opacity: 0;
 }
 .contact .inner .image-box .card_back {
   position: relative;

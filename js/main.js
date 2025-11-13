@@ -145,4 +145,24 @@ window.onload = () => {
         closeButton: "top",
     });
 
+
+    //contact
+    const $innerText = $('.inner-text');
+    const $imageBox = $('.image-box');
+   
+    $('.image-box').hover(
+    function() {
+        $('.inner-text').css({
+            'animation': 'none',
+            'opacity': '0'
+        });
+    },
+    function() {
+        $('.inner-text').css({
+            'animation': '',
+            'opacity': '1'
+        });
+    }
+);
+
 }//script end
