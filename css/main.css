@@ -17,6 +17,7 @@ body {
   min-width: 1600px;
   background-color: var(--background-color);
   /* overflow-x: hidden; */
+  color: #0c0c0c;
 }
 body::-moz-selection {
   background-color: var(--pink-color);
@@ -504,38 +505,77 @@ h2 {
   flex-direction: column;
 }
 .contact .inner h4 {
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 600;
   margin: 120px 0 40px;
 }
+.contact .inner .inner-text {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 5px;
+  color: var(--btn-color);
+  background-color: #fdfdfd;
+}
 .contact .inner .image-box {
-  transition: transform 1s;
-  transform: perspective(800px) rotateY(180deg);
+  width: 500px;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: perspective(800px) rotateY(0deg);
   transform-style: preserve-3d;
   display: grid;
 }
 .contact .inner .image-box > * {
   grid-area: 1/1/1/1;
 }
-.contact .inner .image-box:hover {
-  transform: perspective(800px) rotateY(0deg);
-}
-.contact .inner .image-box img {
-  width: 500px;
-}
-.contact .inner .image-box .front {
-  width: 100%;
+.contact .inner .image-box .card {
   display: block;
 }
-.contact .inner .image-box .back {
+.contact .inner .image-box .card img {
+  width: 100%;
+}
+.contact .inner .image-box:hover {
+  transform: perspective(800px) rotateY(180deg);
+}
+.contact .inner .image-box .card_back {
+  position: relative;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+}
+.contact .inner .image-box .card_back img {
+  width: 100%;
+}
+.contact .inner .image-box .card_back .text-box {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: var(--brown-color);
+}
+.contact .inner .image-box .card_back .text-box span {
+  font-size: 30px;
+  font-weight: 800;
+}
+.contact .inner .image-box .card_back .text-box span .my-name {
+  font-size: 15px;
+}
+.contact .inner .image-box .card_back .text-box .p-box {
+  padding: 6px 0;
+  display: flex;
+  gap: 20px;
+}
+.contact .inner .image-box .card_back .text-box .p-box a:hover {
+  text-decoration: underline;
+}
+.contact .inner .image-box .card_back .kakao-pr {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
 }
 
 .footer {
   background-color: var(--skyblue-color);
   text-align: center;
-  padding: 30px 0;
+  padding: 32px 0 20px;
   position: relative;
 }
 .footer span {
@@ -560,6 +600,7 @@ h2 {
   color: #fdfdfd;
   background-color: var(--pink-color);
   font-size: var(--main-font-size);
+  transition: all 0.2s;
 }
 .footer .footer-btn li:hover {
   background-color: var(--btn-color);
