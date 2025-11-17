@@ -132,12 +132,12 @@ window.onload = () => {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3.5,
         spaceBetween: 20,
-        /* autoplay: {
-            delay: 1,
+        autoplay: {
+            delay: 0,
             disableOnInteraction: false,
         },
-        speed: 5000,
-        loop:true, */
+        speed: 10000,
+        loop:true,
     });
 
     Fancybox.bind("[data-fancybox='gallery']", {
