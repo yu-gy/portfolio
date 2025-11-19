@@ -18,6 +18,12 @@ body {
   background-color: var(--background-color);
   color: #0c0c0c;
 }
+body::-moz-selection {
+  background-color: var(--pink-color);
+}
+body::selection {
+  background-color: var(--pink-color);
+}
 
 a {
   cursor: inherit;

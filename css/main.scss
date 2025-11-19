@@ -21,6 +21,10 @@ body {
     min-width: 1600px;
     background-color: var(--background-color);
     color: #0c0c0c;
+
+    &::selection {
+        background-color: var(--pink-color);
+    }
 }
 
 a {
