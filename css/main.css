@@ -18,12 +18,6 @@ body {
   background-color: var(--background-color);
   color: #0c0c0c;
 }
-body::-moz-selection {
-  background-color: var(--pink-color);
-}
-body::selection {
-  background-color: var(--pink-color);
-}
 
 a {
   cursor: inherit;
@@ -498,7 +492,7 @@ h2 strong {
   text-align: center;
   font-size: var(--title-font-size);
   font-weight: 600;
-  margin-bottom: 80px;
+  padding: 180px 0 80px;
 }
 .contact .inner {
   background: url("../img/contact.png") no-repeat center top;
@@ -577,7 +571,7 @@ h2 strong {
 .contact .inner .image-box .card_back .text-box .p-box a:hover {
   text-decoration: underline;
 }
-.contact .inner .image-box .card_back .kakao-pr {
+.contact .inner .image-box .card_back .kakao-qr {
   position: absolute;
   bottom: 30px;
   right: 30px;

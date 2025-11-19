@@ -21,10 +21,6 @@ body {
     min-width: 1600px;
     background-color: var(--background-color);
     color: #0c0c0c;
-
-    &::selection {
-        background-color: var(--pink-color);
-    }
 }
 
 a {
@@ -583,7 +579,7 @@ h2 {
         text-align: center;
         font-size: var(--title-font-size);
         font-weight: 600;
-        margin-bottom: 80px;
+        padding: 180px 0 80px;
     }
 
     .inner {
@@ -677,7 +673,7 @@ h2 {
                     }
                 }
 
-                .kakao-pr {
+                .kakao-qr {
                     position: absolute;
                     bottom: 30px;
                     right: 30px;
