@@ -583,12 +583,12 @@ h2 {
         text-align: center;
         font-size: var(--title-font-size);
         font-weight: 600;
-        padding: 180px 0 80px;
+        margin-bottom: 80px;
     }
 
     .inner {
         background: url('../img/contact.png') no-repeat center top;
-        background-size: auto;
+        background-size: cover;
         width: 100%;
         height: 600px;
         display: flex;
@@ -677,7 +677,7 @@ h2 {
                     }
                 }
 
-                .kakao-qr {
+                .kakao-pr {
                     position: absolute;
                     bottom: 30px;
                     right: 30px;
